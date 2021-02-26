@@ -77,7 +77,7 @@ dependencies = [
 [[package]]
 name = "block-buffer"
 version = "0.10.0-pre.2"
-source = "git+https://github.com/RustCrypto/utils?branch=master#47b80c33dd1d83d02426152f681ab2c3acd7e40e"
+source = "git+https://github.com/RustCrypto/utils?branch=block_mode#0e7b45243af826940646b51fa7e40c1256311fa3"
 dependencies = [
  "block-padding",
  "generic-array 0.14.4",
@@ -86,7 +86,7 @@ dependencies = [
 [[package]]
 name = "block-padding"
 version = "0.3.0-pre"
-source = "git+https://github.com/RustCrypto/utils?branch=master#47b80c33dd1d83d02426152f681ab2c3acd7e40e"
+source = "git+https://github.com/RustCrypto/utils?branch=block_mode#0e7b45243af826940646b51fa7e40c1256311fa3"
 dependencies = [
  "generic-array 0.14.4",
 ]
@@ -108,6 +108,7 @@ name = "cipher"
 version = "0.3.0-pre.4"
 dependencies = [
  "blobby",
+ "block-buffer 0.10.0-pre.2",
  "crypto-common",
  "generic-array 0.14.4",
  "rand_core",
@@ -145,7 +146,6 @@ version = "0.1.0"
 dependencies = [
  "block-buffer 0.10.0-pre.2",
  "generic-array 0.14.4",
- "rand_core",
 ]
 
 [[package]]

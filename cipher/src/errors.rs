@@ -2,8 +2,6 @@
 
 use core::fmt;
 
-pub use crypto_common::InvalidLength;
-
 /// The error type returned when stream cipher has reached the end of a keystream.
 #[derive(Copy, Clone, Debug)]
 pub struct LoopError;
@@ -36,3 +34,17 @@ impl From<OverflowError> for LoopError {
 
 #[cfg(feature = "std")]
 impl std::error::Error for OverflowError {}
+
+/// The error type returned when key and/or nonce used in [`FromKey`]
+/// or [`FromKeyNonce`] slice-based methods had an invalid length.
+#[derive(Copy, Clone, Eq, PartialEq, Debug)]
+pub struct InvalidLength;
+
+impl fmt::Display for InvalidLength {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> Result<(), fmt::Error> {
+        f.write_str("Invalid Length")
+    }
+}
+
+#[cfg(feature = "std")]
+impl std::error::Error for InvalidLength {}
